@@ -19,9 +19,21 @@ def count_char(s, char):
 # the function should return True indicating that i is a power of j
 # otherwise return False
 def is_power_of(i,j):
-  # YOUR CODE HERE
+  power = 1
+  if j == 0 and i == 0:
+    return True
+  if j < power:
+     r = range(j,power)
+     for n in r:
+        val = i**(power)
+        if val == j:
+            return (val == j)
+        power+=1
 
-  return
+  while power < j:
+    power = power * i
+
+  return (power == j)
 
 # Part C. longest_word
 # Define a function longest_word(s) that takes a string s
