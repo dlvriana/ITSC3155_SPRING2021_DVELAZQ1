@@ -8,10 +8,11 @@
 # Define a function count_char(s, char) that takes a string and a character
 # and returns the number of times the given character appears in the string
 def count_char(s, char):
-  # YOUR CODE HERE
-
-  return
-
+  numTimes = 0
+  for element in s:
+      if element == char:
+         numTimes = numTimes + 1
+  return numTimes
 # Part B. is_power_of
 # Define a function is_power_of(i,j) that takes 2 ints i and j
 # and checks if i is a power of j or not
