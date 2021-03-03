@@ -49,6 +49,10 @@ def longest_consecutive_repeating_char(s):
 # forwards. Treat capital letters the same as lowercase ones
 # and ignore spaces (i.e. case insensitive).
 def is_palindrome(s):
-  # YOUR CODE HERE
-
+  rev = ''.join(reversed(s))
+  rev = rev.replace(" ", "")
+  s = s.replace(" ", "")
+  if (s.lower() == rev.lower()):
+    return True
+  return False
   return
