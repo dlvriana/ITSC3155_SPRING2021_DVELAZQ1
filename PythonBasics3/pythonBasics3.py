@@ -14,10 +14,10 @@ import re
 # Note: Be sure to use RegEx and it works for both upper and lower case and for nonletters!
 
 def ends_with_consonant(s):
+  if re.search("[aeiou]$", s, re.IGNORECASE):
+    return False
 
-
-  return
-
+  return True
 
 
 
