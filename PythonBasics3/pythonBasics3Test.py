@@ -33,6 +33,12 @@ class TestPythonBasicsOne(unittest.TestCase):
         self.assertEqual(pythonBasics3.ends_with_number("I once swam with sharks"), False)
 
         self.assertEqual(pythonBasics3.ends_with_number("Blue plus purple equals 5"), True)
+        
+        self.assertEqual(pythonBasics3.ends_with_number("I am 19"), True)
+
+        self.assertEqual(pythonBasics3.ends_with_number("two thousand"), False)
+
+        self.assertEqual(pythonBasics3.ends_with_number("the current year is 2021"), True)
 
         # Please add three more test cases following the order above
 
