@@ -6,40 +6,34 @@
 
 
 # Part A. count_threes
-# Define a function count_threes(n) that takes an int and
-# returns the number of multiples of 3 in the range from 0
-# to n (including n).
+# Function that returns which multiple of three occurs the most 
+# a string
 
 def count_threes(n):
-  count = 0
-  x = 0
-  for x in range(0,n):
-      if ( 0 < (x + 3) <= n):
-          if ((x+3)%3 == 0):
-            count += 1
-  x += 3
-  return count
+  str_n = str(n)
+  my_dict = {'3' : 0, '6' : 0, '9' : 0}
+  for i in range(0, len(str_n)):
+    if str_n[i] == "3":
+        my_dict['3'] = my_dict.get('3', 0) + 1
+    if str_n[i] == "6":
+        my_dict['6'] = my_dict.get('6', 0) + 1
+    if str_n[i] == "9":
+        my_dict['9'] = my_dict.get('9', 0) + 1
+  max_key = max(my_dict, key = my_dict. get)
+  return int(max_key)
 
 
 # Part B. longest_consecutive_repeating_char
-# Define a function longest_consecutive_repeating_char(s) that takes
-# a string s and returns the character that has the longest consecutive repeat.
+# Function that returns the most repeated character in a given string
 def longest_consecutive_repeating_char(s):
-  count = 0
-  highest_count = 0
-  most_repeated_char = ""
-  currChar = " "
-  prevChar = " "
-  for x in range(0, len(s)):
-    currChar = s[x]
-    if currChar == prevChar:
-      count = count + 1
-    if count > highest_count:
-      highest_count = count
-      most_repeated_char = currChar
-    prevChar = currChar
-    x += 1
-  return most_repeated_char
+    my_dict = {}
+
+    for i in s:
+        my_dict[i] = my_dict.get(i, 0) + 1
+    max_value = max(my_dict.values())
+    max_keys = [j for j, c in my_dict.items() if c == max_value]
+    return max_keys
+
 
 
 # Part C. is_palindrome
